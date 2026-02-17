@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enzo Dash</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logoBox"></div>
+      <div>
+        <div class="title">ENZO DASH</div>
+        <div class="subtitle">Geometry Dash–inspired</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="modeBtn" class="btn">🌗 Mode</button>
+      <button id="fsBtn" class="btn">⛶ Fullscreen</button>
+    </div>
+  </header>
+
+  <!-- Main container -->
+  <main class="shell">
+    <!-- MENU -->
+    <section id="menu" class="panel show">
+      <h1>ENZO DASH</h1>
+      <p class="hint">Jump over spikes. Space / Click / Tap to jump.</p>
+
+      <div class="menuButtons">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="shopBtn" class="btn">Shop</button>
+        <button id="creditsBtn" class="btn">Credits</button>
+      </div>
+
+      <div class="tiny">
+        Tip: Try Dark Mode + Fullscreen for the best vibe 😄
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="game" class="panel">
+      <div class="hud">
+        <div class="pill">Score: <span id="score">0</span></div>
+        <div class="pill">Best: <span id="best">0</span></div>
+        <div class="pill">Mode: <span id="modeLabel">Normal</span></div>
+        <button id="backBtn" class="btn small">← Menu</button>
+      </div>
+
+      <div class="gameWrap" id="gameWrap">
+        <canvas id="c"></canvas>
+
+        <div id="tapHint" class="tapHint">
+          Tap / Click / Space to jump
+        </div>
+
+        <div id="gameOver" class="overlay">
+          <div class="card">
+            <h2>Game Over</h2>
+            <p>Score: <b id="finalScore">0</b></p>
+            <div class="row">
+              <button id="retryBtn" class="btn primary">Retry</button>
+              <button id="menuBtn2" class="btn">Menu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section id="shop" class="panel">
+      <h2>Shop</h2>
+      <p class="hint">Customize your box. Saved automatically.</p>
+
+      <div class="shopGrid">
+        <div class="shopCard">
+          <h3>Box Color</h3>
+          <div class="colorRow">
+            <button class="colorSwatch" data-color="#22c55e" style="--sw:#22c55e"></button>
+            <button class="colorSwatch" data-color="#3b82f6" style="--sw:#3b82f6"></button>
+            <button class="colorSwatch" data-color="#f97316" style="--sw:#f97316"></button>
+            <button class="colorSwatch" data-color="#e11d48" style="--sw:#e11d48"></button>
+            <button class="colorSwatch" data-color="#a855f7" style="--sw:#a855f7"></button>
+            <button class="colorSwatch" data-color="#111827" style="--sw:#111827"></button>
+          </div>
+          <div class="preview">
+            <div class="previewBox" id="previewBox"></div>
+          </div>
+        </div>
+
+        <div class="shopCard">
+          <h3>Trail Style</h3>
+          <div class="trailRow">
+            <button class="btn trailBtn" data-trail="none">None</button>
+            <button class="btn trailBtn" data-trail="dots">Dots</button>
+            <button class="btn trailBtn" data-trail="streak">Streak</button>
+          </div>
+          <p class="tiny">Trail shows while you move.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="shopBackBtn" class="btn">← Back</button>
+        <button id="resetShopBtn" class="btn danger">Reset</button>
+      </div>
+    </section>
+
+    <!-- CREDITS -->
+    <section id="credits" class="panel">
+      <h2>Credits</h2>
+      <div class="creditCard">
+        <p><b>gamemaker:</b> enzo</p>
+        <p class="tiny">Built with HTML / CSS / JS and hosted on GitHub Pages.</p>
+      </div>
+      <button id="creditsBackBtn" class="btn">← Back</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
